@@ -22,7 +22,9 @@ interface.
 
 ## Usage
 
---> NOT BUILD AT THE MOMENT <--
+To Run Server
+__________________
+--> npm run start
 
 ## Contribute?
 
