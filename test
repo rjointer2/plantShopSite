@@ -1,0 +1,24 @@
+// PORT
+
+const port = process.env.PORT || 2000
+
+// Returns middleware that only parses json and only looks at requests
+// where the Content-Type header matches the type option.
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
+// API routes
+
+app.use('/', require('./route/API').route)
+
+// Serving Static File from our future front end ( React )
+app.use('/', express.static(path.join(__dirname, '../client/build')));
+
+// When using Heroku we must serve on production
+
+if(process.env.NODE_ENV === 'production')
+app.use(express.static(path.join(__dirname, "../client/build")));
+
+
+// App Listening for Heroku Port or Local Host Port

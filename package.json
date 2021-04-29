@@ -1,10 +1,11 @@
 {
-  "name": "plantShop",
+  "name": "plantshop",
   "version": "1.0.0",
   "description": "<!-- click each bullet to move to the associated section -->\r * [Description](#description)\r * [Install](#install)\r * [Usage](#usage)\r * [Contribute](#contribute)\r * [Test](#test)\r * [License](#license)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/rjointer2/plantShopSite#readme",
   "dependencies": {
-    "concurrently": "^6.0.2"
+    "concurrently": "^6.0.2",
+    "nodemon": "^2.0.7"
   }
 }
