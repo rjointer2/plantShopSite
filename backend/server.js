@@ -24,8 +24,16 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // API routes
+// These contain our User and Product Schema
+// We have have every route export a router to execute this middleware
 
-app.use('/api', require('./route/API').route)
+app.use('/api', require('./route/API').route);
+
+/* 
+
+    Right now no get request for the users and products
+
+*/
 
 
 app.listen(PORT, () => {

@@ -1,6 +1,17 @@
 
 const Sequelize = require('sequelize');
 
+/* 
+
+    CREATE DATABASE shopplantdb;
+    create user shopper identified by 'plantpass';
+    use shopplantdb;
+    grant all priviileges on the shopplantdb. * to shopper;
+    grant all privileges on shopplantdb. * to shopper;
+
+
+*/
+
 const db = new Sequelize('shopplantdb', 'shopper', 'plantpass', {
     host: 'localhost',
     dialect: 'mysql', 
@@ -28,8 +39,13 @@ const User = db.define('users', {
     },
     username: {
         type: Sequelize.STRING,
-
+        allowNull: false
+    },
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
+
 });
 
 // This is for our products
@@ -48,17 +64,45 @@ const Product = db.define('product', {
         type: Sequelize.FLOAT,
         allowNull: false,
         defaultValue: 0.0
+    },
+    summary: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    picture: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 });
 
 
 // synchronize a file's in-core state with the underlying storage device
+// Sequelize will create this database if doesn't exist already
+
+
 db.sync().then(() => {
     console.log('Database has been synced')
 }).catch((err) => {
     console.log(err)
     console.log("Error creating Database")
 })
+
+/* 
+    use shopplantdb;
+    show tables;
++-----------------------+
+| Tables_in_shopplantdb |
++-----------------------+
+| products              |
+| users                 |
++-----------------------+
+
+    DESCRIBE user // for field, type, null key, default, and extras
+
+    RIGHT NOW http://localhost:2000/api/users IS AN EMPTY ARRAY WITH NO DEFINE USER
+    AND SAME FOR PRODUCTS
+
+*/
 
 exports = module.exports = {
     User, Product
