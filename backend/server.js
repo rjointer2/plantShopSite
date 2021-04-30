@@ -15,7 +15,6 @@ const PORT = process.env.PORT || 2000;
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
-
 /* 
 
     WHERE WE WILL SERVE OUR REACT FRONT END BUILD FOLDER 
