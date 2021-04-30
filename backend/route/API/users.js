@@ -16,6 +16,7 @@ route.get('/', (req, res) => {
 // Expecting these proprties in our post request to create a user
 
 route.post('/', (req, res) => {
+    // http://localhost:2000/api/users/post
     // Creates an object that has the specified prototype or that has null prototype
     // from the schema defined in ./DB/db.js
     User.create({
@@ -33,5 +34,40 @@ route.post('/', (req, res) => {
         })
     })
 })
+
+// delete request
+
+route.delete('/:id', (req, res) => {
+    
+    User.destroy({ where: { id: req.params.id }});
+    res.status(201).send('deleted user')
+});
+
+// Update Request
+
+// FIX THIS UPDATE REQUEST, NOT UPDATING
+
+route.put('/:id/firstName', (req, res) => {
+    User.update({ firstName: req.params.firstName }, {
+        where: req.params.id
+    })
+    res.status(201).send('updated firstname')
+})
+
+route.put('/:id/lastName', (req, res) => {
+    User.update({ firstName: req.params.lastName, where: req.params.id })
+    res.status(201).send('updated lastName')
+})
+
+route.put('/:id/password', (req, res) => {
+    User.update({ firstName: req.params.password, where: req.params.id })
+    res.status(201).send('updated password')
+})
+
+route.put('/:id/username', (req, res) => {
+    User.update({ firstName: req.params.username, where: req.params.id })
+    res.status(201).send('updated username')
+})
+
 
 exports = module.exports = route
