@@ -1,4 +1,5 @@
 
+require('dotenv').config()
 const Sequelize = require('sequelize');
 
 /* 
@@ -12,8 +13,8 @@ const Sequelize = require('sequelize');
 
 */
 
-const db = new Sequelize('shopplantdb', 'shopper', 'plantpass', {
-    host: 'localhost',
+const db = new Sequelize('shopplantdb', process.env.UN, process.env.PD, {
+    host: process.env.HT,
     dialect: 'mysql', 
     pool: {
         min: 0,
@@ -85,6 +86,7 @@ db.sync().then(() => {
 }).catch((err) => {
     console.log(err)
     console.log("Error creating Database")
+    console.log(process.env.UN, ' : ', process.env.PD)
 })
 
 /* 

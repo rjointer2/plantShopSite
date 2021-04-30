@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
+    "start": "if-env NODE_ENV=production && npm run start:production",
+    "dev": "concurrently \"npm run server\"",
+    "start:production": "cd backend && npm start",
+    "install": "cd backend && npm install",
+    "heroku-postbuild": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,6 +25,6 @@
   "homepage": "https://github.com/rjointer2/plantShopSite#readme",
   "dependencies": {
     "concurrently": "^6.0.2",
-    "nodemon": "^2.0.7"
+    "if-env": "^1.0.4"
   }
 }
