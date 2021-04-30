@@ -9,8 +9,7 @@
     "start": "if-env NODE_ENV=production && npm run start:production",
     "dev": "concurrently \"npm run server\"",
     "start:production": "cd backend && npm start",
-    "install": "cd backend && npm install",
-    "heroku-postbuild": "cd client && npm run build"
+    "install": "cd backend && npm install"
   },
   "repository": {
     "type": "git",
