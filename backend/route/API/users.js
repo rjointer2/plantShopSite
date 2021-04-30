@@ -45,29 +45,34 @@ route.delete('/:id', (req, res) => {
 
 // Update Request
 
-// FIX THIS UPDATE REQUEST, NOT UPDATING
-
 route.put('/:id/firstName', (req, res) => {
-    User.update({ firstName: req.params.firstName }, {
-        where: req.params.id
+    User.findOne({
+        where: {
+            id: req.params.id
+        }
     })
+
+    
+    // FIX THIS UPDATE REQUEST, NOT UPDATING
+    
+    /* 
+    
+        .on('sucesss', (user) => {
+        if(user) user.update({
+            firstName: req.body.firstName
+        })
+    })
+
+    */
+
     res.status(201).send('updated firstname')
 })
 
-route.put('/:id/lastName', (req, res) => {
-    User.update({ firstName: req.params.lastName, where: req.params.id })
-    res.status(201).send('updated lastName')
-})
+/* 
 
-route.put('/:id/password', (req, res) => {
-    User.update({ firstName: req.params.password, where: req.params.id })
-    res.status(201).send('updated password')
-})
+    REST OF THE PUT REQUEST 
 
-route.put('/:id/username', (req, res) => {
-    User.update({ firstName: req.params.username, where: req.params.id })
-    res.status(201).send('updated username')
-})
+*/
 
 
 exports = module.exports = route
