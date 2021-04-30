@@ -1,5 +1,6 @@
 
-require('dotenv').config()
+require("dotenv").config();
+
 const Sequelize = require('sequelize');
 
 /* 
@@ -13,7 +14,7 @@ const Sequelize = require('sequelize');
 
 */
 
-const db = new Sequelize('shopplantdb', process.env.UN, process.env.PD, {
+const db = new Sequelize(process.env.DB, process.env.UN, process.env.PD, {
     host: process.env.HT,
     dialect: 'mysql', 
     pool: {
