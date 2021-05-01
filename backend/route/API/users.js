@@ -30,7 +30,7 @@ route.post('/', (req, res) => {
         console.log(user)
     }).catch((err) => {
         res.status(500).send({
-            error: 'Can get all users'
+            error: 'Can not get all users'
         })
     })
 })
@@ -43,31 +43,34 @@ route.delete('/:id', (req, res) => {
     res.status(201).send('deleted user')
 });
 
-// Update Request
-
-// FIX THIS UPDATE REQUEST, NOT UPDATING
+// Update Requests
+// This most likely isn't the best way at the moment but this is a smaller application
+// so this doesn;t have to be perfect
 
 route.put('/:id/firstName', (req, res) => {
-    User.update({ firstName: req.params.firstName }, {
-        where: req.params.id
-    })
+
+    User.update({ firstName: req.body.firstName }, {where: { id: req.params.id } })
     res.status(201).send('updated firstname')
-})
+});
 
 route.put('/:id/lastName', (req, res) => {
-    User.update({ firstName: req.params.lastName, where: req.params.id })
-    res.status(201).send('updated lastName')
-})
 
-route.put('/:id/password', (req, res) => {
-    User.update({ firstName: req.params.password, where: req.params.id })
-    res.status(201).send('updated password')
-})
+    User.update({ firstName: req.body.lastName }, {where: { id: req.params.id } })
+    res.status(201).send('updated lastname')
+});
 
 route.put('/:id/username', (req, res) => {
-    User.update({ firstName: req.params.username, where: req.params.id })
-    res.status(201).send('updated username')
-})
+
+    User.update({ firstName: req.body.username }, {where: { id: req.params.id } })
+    res.status(201).send('updated firstname')
+});
+
+route.put('/:id/password', (req, res) => {
+
+    User.update({ firstName: req.body.password }, {where: { id: req.params.id } })
+    res.status(201).send('updated firstname')
+});
+
 
 
 exports = module.exports = route
