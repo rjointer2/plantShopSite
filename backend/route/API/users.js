@@ -73,38 +73,7 @@ route.put('/:id/:updateProperty', (req, res) => {
         res.status(201).send('updated password')
     }
 
-
-
 });
-
-
-
-/* 
-
-route.put('/:id/firstName', (req, res) => {
-
-    User.update({ firstName: req.body.firstName }, {where: { id: req.params.id } })
-    res.status(201).send('updated firstname')
-});
-
-route.put('/:id/lastName', (req, res) => {
-
-    User.update({ firstName: req.body.lastName }, {where: { id: req.params.id } })
-    res.status(201).send('updated lastname')
-});
-
-route.put('/:id/username', (req, res) => {
-
-    User.update({ firstName: req.body.username }, {where: { id: req.params.id } })
-    res.status(201).send('updated firstname')
-});
-
-route.put('/:id/password', (req, res) => {
-
-    User.update({ firstName: req.body.password }, {where: { id: req.params.id } })
-    res.status(201).send('updated firstname')
-});
- */
 
 
 exports = module.exports = route
