@@ -47,6 +47,40 @@ route.delete('/:id', (req, res) => {
 // This most likely isn't the best way at the moment but this is a smaller application
 // so this doesn;t have to be perfect
 
+
+route.put('/:id/:updateProperty', (req, res) => {
+
+    console.log( req.params.updateProperty )
+
+    
+    if( req.params.updateProperty === 'firstName') {
+        User.update({ firstName: req.body.firstName }, {where: { id: req.params.id } })
+        res.status(201).send('updated firstname');
+    }
+
+    if( req.params.updateProperty === 'lastName') {
+        User.update({ lastName: req.body.lastName }, {where: { id: req.params.id } })
+        res.status(201).send('updated lastname')
+    }
+
+    if( req.params.updateProperty === 'username') {
+        User.update({ username: req.body.username }, {where: { id: req.params.id } })
+        res.status(201).send('updated username')
+    }
+
+    if( req.params.updateProperty === 'password') {
+        User.update({ password: req.body.password }, {where: { id: req.params.id } })
+        res.status(201).send('updated password')
+    }
+
+
+
+});
+
+
+
+/* 
+
 route.put('/:id/firstName', (req, res) => {
 
     User.update({ firstName: req.body.firstName }, {where: { id: req.params.id } })
@@ -70,7 +104,7 @@ route.put('/:id/password', (req, res) => {
     User.update({ firstName: req.body.password }, {where: { id: req.params.id } })
     res.status(201).send('updated firstname')
 });
-
+ */
 
 
 exports = module.exports = route
