@@ -14,7 +14,7 @@ const mapStateToProps = state => {
 }
 
 // This function gets the dispatch function as a argument and enables us to map
-// action creators to the props
+// action creators to the props...
 
 const mapDispatchToProps = state => {
     return {
