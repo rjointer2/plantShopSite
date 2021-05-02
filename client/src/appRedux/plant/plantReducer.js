@@ -10,6 +10,8 @@ const initialState = {
     numofPlants: 10
 }
 
+// reducer specifies how the state changes in the application in response to the store
+
 // reducer will return a new state from it's initial State and the action described
 
 const plantReducer = ( state = initialState, action ) => {

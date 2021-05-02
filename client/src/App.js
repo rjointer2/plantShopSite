@@ -1,12 +1,20 @@
 
 import './App.css';
-import ShopContainer from './appComponents/ShopContainer';
+
+// This provider will have any prop passed accessable throughtout the entire store
+import { Provider } from 'react-redux';
+
+import store from './appRedux/store';
+import PlantContainer from './appComponents/PlantContainer';
 
 function App() {
   return (
-    <div className="App">
-        <ShopContainer/>
-    </div>
+    // We are providing the store throughout the entire applciation
+    <Provider store={store}>
+      <div className="App">
+          <PlantContainer/>
+      </div>
+    </Provider>
   );
 }
 
