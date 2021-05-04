@@ -3,9 +3,8 @@ import './App.css';
 
 // This provider will have any prop passed accessable throughtout the entire store
 import { Provider } from 'react-redux';
-
 import store from './appRedux/store';
-import PlantContainer from './appComponents/PlantContainer';
+
 
 function App() {
   return (
