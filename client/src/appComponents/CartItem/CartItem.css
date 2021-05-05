@@ -1,0 +1,11 @@
+
+.cart_item_conatiner {
+    display: flex;
+    justify-content: center;
+}
+
+.cart_item_card {
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}

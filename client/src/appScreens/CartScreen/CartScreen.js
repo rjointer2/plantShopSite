@@ -1,5 +1,8 @@
 
+import CartItem from '../../appComponents/CartItem/CartItem';
 import './CartScreen.css';
+
+
 
 const CartScreen = () => {
     return (
@@ -9,6 +12,18 @@ const CartScreen = () => {
                     <h2>
                         Shopping Cart
                     </h2>
+                    <CartItem />
+                </div>
+                <div className="cart_item">
+                    <p>
+                        Subtotal (0) items
+                    </p>
+                    <p>
+                        Price
+                    </p>
+                    <button type='button'>
+                        Proceed To Checkout
+                    </button>
                 </div>
             </div>
         </div>
