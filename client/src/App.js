@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useState } from 'react';
 
 // Screens
-import HomeScreen from "./screens/HomeScreen/HomeScreen";
-import CartScreen from "./screens/CartScreen/CartScreen";
-import ProductScreen from "./screens/ProductScreen/ProductScreen";
+import HomeScreen from "./appScreens/HomeScreen/HomeScreen";
+import CartScreen from "./appScreens/CartScreen/CartScreen";
+import ProductScreen from "./appScreens/ProductScreen/ProductScreen";
 
 // Components
 
