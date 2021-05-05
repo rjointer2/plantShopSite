@@ -2,7 +2,7 @@
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({click}) => {
     return (
         <nav className="navbar">
             {/* logo */}
@@ -22,13 +22,15 @@ const Navbar = () => {
                 </li>
                 <li>
                     <Link to='/cart'>
-                        {/* Icon */}
                         Shop
-                        <span className="cartlogo">0</span>
                     </Link>
                 </li>
             </ul>
-            <div className="hamburger_menu">
+
+            {/* 
+                Once the state is true
+            */}
+            <div className="hamburger_menu" onClick={click}>
                 <i class="fas fa-bars"></i>
             </div>
         </nav>
@@ -37,4 +39,3 @@ const Navbar = () => {
 
 export default Navbar;
 
-// <i class="fas fa-bars"></i>
