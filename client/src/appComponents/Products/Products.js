@@ -17,7 +17,7 @@ const Products = () => {
                 <p className="product_price"> Product Price </p>
 
                 {/* RIGHT NOW THIS IS HARD CODE AND WILL IMPORT A CUSTOM FETCH HOOK TO HANDLE THE ROUTES */}
-                <Link to={`/products/${1}`} className='product_button'>
+                <Link to={`/product/${1}`} className='product_button'>
                     View Now
                 </Link>
             </div>
