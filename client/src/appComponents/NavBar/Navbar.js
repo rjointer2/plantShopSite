@@ -31,7 +31,7 @@ const Navbar = ({click}) => {
                 Once the state is true
             */}
             <div className="hamburger_menu" onClick={click}>
-                <i class="fas fa-bars"></i>
+                <i className="fas fa-bars"></i>
             </div>
         </nav>
     )

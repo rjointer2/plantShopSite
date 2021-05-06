@@ -14,15 +14,15 @@ const SideDrawer = ({show, click}) => {
             <li>
                 <Link to="/cart">
                     <span>
-                        <i class="fas fa-shopping-cart"></i>
+                        <i className="fas fa-shopping-cart"></i>
                         Cart <span className="cart_qty">0</span>
                     </span>
                 </Link>
             </li>
             <li>
-                <Link>
+                <Link to='/shop'>
                     <span>
-                        <i class="fas fa-shopping-bag"></i>
+                        <i className="fas fa-shopping-bag"></i>
                         Shop <span className="cart_qty">0</span>
                     </span>
                 </Link>

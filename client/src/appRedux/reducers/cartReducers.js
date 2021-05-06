@@ -22,14 +22,14 @@ export const cartReducer = ( state = { cartItems: [] }, action ) => {
                     // if the item exist we will spread the state's array ( castItem )
                     // then check if the state's cartItem iteration has the existing product and 
                     // return's it as the property of cartItem
-                    cartItem: state.cartItem.map(i => i.product === existingItem.product ? item: i)
+                    cartItems: state.cartItems.map(i => i.product === existingItem.product ? item: i)
                 } 
             } else {
                 return {
                     ...state,
                     // if it's the first the item is added
                     // or push in the state properties and add the item in the cartItem Array
-                    cartItems: [...state.cartItem, item]
+                    cartItems: [...state.cartItems, item]
                 }
             }
 

@@ -14,7 +14,7 @@ const Sequelize = require('sequelize');
 
 */
 
-const db = new Sequelize(process.env.DB, process.env.UN, process.env.PD, {
+const db = new Sequelize(process.env.DB || 'localhost', process.env.UN, process.env.PD, {
     host: process.env.HT,
     dialect: 'mysql', 
     pool: {
