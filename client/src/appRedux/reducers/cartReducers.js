@@ -3,37 +3,41 @@ import * as actionTypes from '../constants/cartConstants';
 
 // This will specifies as the store and action's of the cart tie together
 export const cartReducer = ( state = { cartItems: [] }, action ) => {
-    // Check the action's type
+ 
     switch(action.type) {
+        // if the action type is the following ADD_TO_C ART
         case actionTypes.ADD_TO_CART: 
+            // item is set action payload
+            // Our payload is the product's object
             const item = action.payload;
 
-            // calls predicate once for each element of the array, 
-            // in ascending order, until it finds one where predicate returns true. 
-
-            // The object's id property return the matcher 
-            const existingItem = state.cartItem.find((item) => item.id === item.id);
+            // Using find, we will get the state's cartItem Iteration and compare it 
+            // to the item's prodect object
+            // In our cartAction's the product property is the product's id
+            const existingItem = state.cartItem.find((i) => i.product === item.product);
 
             if(existingItem) {
                 return {
                     ...state,
-                    // We will set the new cartitems to an array
-                    // loop through the old array and compare the potenial state
-                    // to the existing compared item and if it's true then set the item's property to the potential state
-                    cartItem: state.cartItem.map(i => i.id === existingItem.id ? item: i)
+                    // if the item exist we will spread the state's array ( castItem )
+                    // then check if the state's cartItem iteration has the existing product and 
+                    // return's it as the property of cartItem
+                    cartItem: state.cartItem.map(i => i.product === existingItem.product ? item: i)
                 } 
             } else {
                 return {
                     ...state,
-                    // or push in the state properties and add the item in this array
+                    // if it's the first the item is added
+                    // or push in the state properties and add the item in the cartItem Array
                     cartItems: [...state.cartItem, item]
                 }
             }
-            
+
+        // removes from cart
         case actionTypes.REMOVE_FROM_CART: 
             return {
                 ...state,
-                cartItem: state.cartItems.filter((i) => i.id !== action.payload)
+                cartItem: state.cartItems.filter((i) => i.product !== action.payload)
             }
 
 
