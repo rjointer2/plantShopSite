@@ -24,7 +24,6 @@ route.get('/:id', (req, res) => {
             error: err
         })
     })
-
 });
 
 // Create new product
