@@ -15,6 +15,18 @@ route.get('/', (req, res) => {
     })
 });
 
+route.get('/:id', (req, res) => {
+
+    Product.findByPk(req.params.id).then((product) => {
+        res.status(201).send(product)
+    }).catch((err) => {
+        res.status(500).send({
+            error: err
+        })
+    })
+
+});
+
 // Create new product
 
 route.post('/', (req, res) => {
